@@ -1,4 +1,4 @@
-/* Base Layout */
+/* Global Reset */
 body {
   font-family: 'Outfit', sans-serif;
   margin: 0;
@@ -20,30 +20,24 @@ body {
   font-family: 'Bruno Ace SC', cursive;
   font-size: 2.5rem;
   text-align: center;
-  margin-bottom: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  line-height: 0.95;
 }
 
 /* Logo */
 .logo {
   display: block;
   max-width: 200px;
-  margin: 2rem auto 0 auto;
+  margin: 2rem auto 1rem auto;
 }
 
-/* Price Section */
-.price-section {
+/* Subtitle */
+.subtitle {
   text-align: center;
-  background-color: #3C1B8C;
-  color: white;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(60, 27, 140, 0.3);
-  margin-bottom: 2rem;
-}
-
-.price-tag {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
+  color: #3C1B8C;
+  font-weight: 500;
+  margin-bottom: 1rem;
 }
 
 /* CTA Button */
@@ -51,7 +45,7 @@ body {
   background-color: #007BFF;
   color: white;
   padding: 1rem 2rem;
-  border-radius: 50px;
+  border-radius: 40px;
   text-decoration: none;
   font-weight: bold;
   display: inline-block;
@@ -65,7 +59,11 @@ body {
   box-shadow: 0 8px 25px rgba(0, 123, 255, 0.4);
 }
 
-/* Feature List */
+/* Feature Section */
+.features {
+  margin-top: 3rem;
+}
+
 .feature-list {
   list-style: none;
   padding: 0;
@@ -75,43 +73,12 @@ body {
   margin-bottom: 1.5rem;
 }
 
-/* Testimonials */
-.testimonial-section {
-  display: grid;
-  gap: 2rem;
-  margin-top: 3rem;
-}
-
-.testimonial {
-  background-color: white;
-  border-radius: 20px;
-  padding: 1.5rem;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  position: relative;
-}
-
-.quote-icon {
-  font-size: 4rem;
-  line-height: 1;
-  color: #ABA9B7;
-  position: absolute;
-  top: -1rem;
-  left: -0.5rem;
-}
-
-.author {
-  font-family: 'Bruno Ace SC', cursive;
-  font-size: 1.1rem;
-  margin-top: 1.5rem;
-}
-
-.title {
+.highlight {
   font-weight: bold;
   color: #3C1B8C;
-  margin-top: 0.25rem;
 }
 
-/* How It Works */
+/* How It Works – with cascade animation */
 .how-it-works-list {
   list-style: none;
   padding: 0;
@@ -123,28 +90,85 @@ body {
   align-items: flex-start;
   margin-bottom: 1.5rem;
   opacity: 0;
-  transform: translateX(100%);
-  transition: all 0.6s ease;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .how-it-works-list li .bullet {
   font-size: 1.5rem;
   margin-right: 1rem;
-  transform: translateX(-50%);
-  transition: all 0.6s ease;
+  transform: translateX(-30px);
+  transition: transform 0.6s ease;
+}
+
+.how-it-works-list li .step-text {
+  transform: translateX(30px);
+  transition: transform 0.6s ease;
 }
 
 .how-it-works-list li.visible {
   opacity: 1;
-  transform: translateX(0);
+  transform: translateY(0);
 }
 
 .how-it-works-list li.visible .bullet {
   transform: translateX(0);
 }
 
-.step-text {
-  flex: 1;
+.how-it-works-list li.visible .step-text {
+  transform: translateX(0);
+}
+
+/* Testimonials */
+.testimonial-section {
+  margin-top: 4rem;
+  display: grid;
+  gap: 2rem;
+}
+
+.testimonial {
+  background-color: white;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  position: relative;
+}
+
+.quote-mark {
+  font-size: 4rem;
+  line-height: 1;
+  color: #ABA9B7;
+  position: absolute;
+  top: -1rem;
+  left: -0.5rem;
+}
+
+.client-name {
+  font-family: 'Bruno Ace SC', cursive;
+  font-size: 1.1rem;
+  margin-top: 1.5rem;
+}
+
+.client-title {
+  font-weight: bold;
+  color: #3C1B8C;
+  margin-top: 0.25rem;
+}
+
+/* Price Section */
+.price-section {
+  text-align: center;
+  background-color: #3C1B8C;
+  color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(60, 27, 140, 0.3);
+  margin-top: 3rem;
+}
+
+.price-copy {
+  font-size: 1.25rem;
+  line-height: 1.0;
 }
 
 /* Progress Bar */
@@ -166,5 +190,5 @@ body {
 /* Final CTA */
 .final-cta {
   text-align: center;
-  margin-top: 3rem;
+  margin: 3rem 0;
 }
