@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (entry.isIntersecting) {
           setTimeout(() => {
             entry.target.classList.add("visible");
-          }, index * 150); // 150ms delay between each item
+          }, index * 150); // 150ms cascade delay
           observer.unobserve(entry.target);
         }
       });
