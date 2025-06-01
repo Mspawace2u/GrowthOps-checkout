@@ -3,15 +3,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const observer = new IntersectionObserver(
     (entries) => {
-      entries.forEach((entry) => {
+      entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
+          setTimeout(() => {
+            entry.target.classList.add("visible");
+          }, index * 150); // 150ms delay between each item
+          observer.unobserve(entry.target);
         }
       });
     },
-    {
-      threshold: 0.1,
-    }
+    { threshold: 0.1 }
   );
 
   steps.forEach((step) => {
