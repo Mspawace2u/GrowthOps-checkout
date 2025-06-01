@@ -1,13 +1,15 @@
 // Fade + slide-in bullets
-const bullets = document.querySelectorAll('.bullet');
+const bullets = document.querySelectorAll('.how-it-works-list li');
 
 const bulletObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
+  entries.forEach((entry, index) => {
     if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
+      setTimeout(() => {
+        entry.target.classList.add('visible');
+      }, index * 150);
     }
   });
-}, { threshold: 0.4 });
+}, { threshold: 0.3 });
 
 bullets.forEach(bullet => bulletObserver.observe(bullet));
 
@@ -20,6 +22,6 @@ const quoteObserver = new IntersectionObserver(entries => {
       entry.target.classList.add('visible');
     }
   });
-}, { threshold: 0.4 });
+}, { threshold: 0.3 });
 
 quotes.forEach(q => quoteObserver.observe(q));
