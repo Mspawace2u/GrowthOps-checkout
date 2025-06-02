@@ -1,27 +1,25 @@
-// Fade + slide-in bullets
-const bullets = document.querySelectorAll('.how-it-works-list li');
+document.addEventListener("DOMContentLoaded", () => {
+  const observerOptions = {
+    threshold: 0.1
+  };
 
-const bulletObserver = new IntersectionObserver(entries => {
-  entries.forEach((entry, index) => {
-    if (entry.isIntersecting) {
-      setTimeout(() => {
-        entry.target.classList.add('visible');
-      }, index * 150);
-    }
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("fade-in");
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll(".scroll-fade-in").forEach(el => {
+    observer.observe(el);
   });
-}, { threshold: 0.3 });
 
-bullets.forEach(bullet => bulletObserver.observe(bullet));
-
-// Quote mark animations
-const quotes = document.querySelectorAll('.quote-mark');
-
-const quoteObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
+  document.querySelectorAll(".bullet-container").forEach(container => {
+    observer.observe(container);
   });
-}, { threshold: 0.3 });
 
-quotes.forEach(q => quoteObserver.observe(q));
+  document.querySelectorAll(".quote-mark").forEach(quote => {
+    observer.observe(quote);
+  });
+});
