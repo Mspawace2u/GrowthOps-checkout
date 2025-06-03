@@ -1,33 +1,17 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const bullets = document.querySelectorAll(".process-list li");
-    const quoteMark = document.querySelector(".quote-mark");
-
-    function animateOnScroll(entries, observer) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = 1;
-                entry.target.style.transform = "translateY(0)";
-                observer.unobserve(entry.target);
-            }
-        });
+window.addEventListener("scroll", function () {
+  const steps = document.querySelectorAll(".bullet-steps li");
+  steps.forEach((step, i) => {
+    const rect = step.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 100) {
+      setTimeout(() => step.classList.add("visible"), i * 150);
     }
+  });
+});
 
-    const observer = new IntersectionObserver(animateOnScroll, {
-        threshold: 0.5
-    });
-
-    bullets.forEach(bullet => observer.observe(bullet));
-
-    if (quoteMark) {
-        const quoteObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    quoteMark.style.opacity = 1;
-                    quoteMark.style.transform = "scale(1)";
-                }
-            });
-        }, { threshold: 0.5 });
-
-        quoteObserver.observe(quoteMark);
-    }
+window.addEventListener("load", () => {
+  const cta = document.querySelector(".cta-button");
+  cta.style.opacity = 0;
+  setTimeout(() => {
+    cta.style.opacity = 1;
+  }, 500);
 });
