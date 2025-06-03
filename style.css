@@ -1,0 +1,222 @@
+/* ------------------------------------------------------------------
+   COLOR SYSTEM
+   ------------------------------------------------------------------ */
+:root {
+  --indigo:   #3C1B8C;
+  --blue:     #007BFF;
+  --black:    #1A1A1A;
+  --gray:     #ABA9B7;
+  --white:    #FFFFFF;
+}
+
+/* ------------------------------------------------------------------
+   RESET / BODY
+   ------------------------------------------------------------------ */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Outfit', sans-serif;
+  color: var(--black);
+  line-height: 1.4;
+  background: var(--white);
+}
+
+/* ------------------------------------------------------------------
+   PROGRESS BAR
+   ------------------------------------------------------------------ */
+.progress-bar{
+  background: var(--indigo);
+  color: var(--white);
+  text-align: center;
+  font-weight: 700;
+  padding: .75rem 1rem;
+  position: fixed;
+  inset: 0 0 auto 0;       /* top:0; left:0; right:0 */
+  z-index: 9999;
+}
+
+/* ------------------------------------------------------------------
+   HERO
+   ------------------------------------------------------------------ */
+.hero{
+  padding: 5.5rem 1.5rem 3rem;   /* accounts for fixed bar */
+  text-align: center;
+}
+.logo{
+  width: 45%;
+  max-width: 160px;
+  margin: 0 auto 1.25rem;
+}
+h1{
+  font-family: 'Bruno Ace SC', sans-serif;
+  font-size: clamp(1.9rem, 5vw, 2.6rem);
+  line-height: .95;                /* tightened */
+  margin-bottom: .5rem;
+}
+.subtitle{
+  font-weight: 500;
+  color: var(--indigo);
+  margin-bottom: 1.75rem;
+}
+
+/* ------------------------------------------------------------------
+   CTA BUTTONS  (hero + price section)
+   ------------------------------------------------------------------ */
+.cta-button,
+.book-button{
+  display: inline-block;
+  background: var(--blue);
+  color: var(--white);
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  padding: 1rem 2.25rem;
+  border-radius: 2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,.15);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.cta-button:hover,
+.book-button:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0,.18);
+}
+
+/* ------------------------------------------------------------------
+   FEATURES
+   ------------------------------------------------------------------ */
+.features{
+  padding: 3rem 1.5rem;
+}
+.features h2{
+  font-size: 1.6rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.features li{
+  margin-bottom: 1rem;
+  list-style: none;
+}
+.features strong{ color: var(--indigo); }
+
+/* ------------------------------------------------------------------
+   PROCESS  (bullet cascade)
+   ------------------------------------------------------------------ */
+.process{ padding: 3rem 1.5rem 1rem; }
+.process h2{
+  font-size: 1.6rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* bullet container */
+.bullet-steps li{
+  display: flex;
+  align-items: flex-start;
+  gap: .75rem;
+  margin-bottom: 1rem;
+
+  /* start hidden */
+  opacity: 0;
+  transition: opacity .6s ease-out;
+}
+/* stagger delays */
+.bullet-steps li:nth-child(1){ transition-delay: 0ms;   }
+.bullet-steps li:nth-child(2){ transition-delay: 150ms; }
+.bullet-steps li:nth-child(3){ transition-delay: 300ms; }
+.bullet-steps li:nth-child(4){ transition-delay: 450ms; }
+
+.bullet-steps li.visible{ opacity: 1; }
+
+/* icon slides in from left, fades */
+.icon{
+  font-size: 1.7rem;
+  transform: translateX(-20px);
+  opacity: 0;
+  transition: transform .6s ease-out, opacity .6s ease-out;
+}
+.bullet-steps li.visible .icon{
+  transform: none;
+  opacity: 1;
+}
+
+/* text slides in from right, fades */
+.step-text{
+  flex: 1;
+  transform: translateX(20px);
+  opacity: 0;
+  transition: transform .6s ease-out, opacity .6s ease-out;
+}
+.bullet-steps li.visible .step-text{
+  transform: none;
+  opacity: 1;
+}
+
+/* ------------------------------------------------------------------
+   PRICE SECTION  (indigo call-out)
+   ------------------------------------------------------------------ */
+.price-section{
+  background: var(--indigo);
+  color: var(--white);
+  text-align: center;
+  padding: 2rem 5vw;
+  box-shadow: 0 4px 12px rgba(0,0,0,.15);
+}
+.price-copy{
+  max-width: 80%;
+  margin: 0 auto 1.5rem;
+  line-height: 1.0;          /* as requested */
+  font-weight: 700;
+}
+.book-button{
+  width: 50%;
+  max-width: 240px;
+}
+
+/* ------------------------------------------------------------------
+   TESTIMONIALS
+   ------------------------------------------------------------------ */
+.testimonials{ padding: 3rem 1.5rem 4rem; }
+.testimonials h2{
+  font-size: 1.6rem;
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+
+.testimonial{
+  background: var(--white);
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,.10);
+  padding: 1.75rem 1.5rem 1.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+/* quote mark animation */
+.quote-mark{
+  font-size: 2.5rem;
+  color: var(--indigo);
+  position: absolute;
+  top: 1rem; left: 1.25rem;
+  transform: scale(.8);
+  opacity: 0;
+  transition: transform .5s ease-in-out, opacity .5s ease-in-out;
+}
+.quote-mark.visible{
+  transform: scale(1);
+  opacity: 1;
+}
+
+.author{
+  font-family: 'Bruno Ace SC', sans-serif;
+  margin-top: 1.25rem;
+  text-transform: capitalize;
+}
+.brand{ font-weight: 700; }
+
+/* ------------------------------------------------------------------
+   MEDIA QUERIES
+   ------------------------------------------------------------------ */
+@media(min-width:600px){
+  .logo{ max-width: 180px; }
+  .price-section{ padding: 2.5rem 6vw; }
+}
