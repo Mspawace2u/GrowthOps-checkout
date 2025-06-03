@@ -1,117 +1,106 @@
 body {
-  font-family: 'Outfit', sans-serif;
-  font-size: 18px;
-  background-color: #FFFFFF;
-  color: #1A1A1A;
-  line-height: 1.6;
-  margin: 0;
-  font-weight: 500;
+    font-family: 'Outfit', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FFFFFF;
+    color: #1A1A1A;
 }
 
-.progress-bar {
-  background-color: #3C1B8C;
-  color: #FFF;
-  text-align: center;
-  padding: 0.5rem;
-  font-weight: 600;
+.hero {
+    text-align: center;
+    padding: 3rem 1rem;
 }
 
 .logo {
-  width: 80%;
-  max-width: 300px;
-  display: block;
-  margin: 1rem auto 0.5rem;
+    width: 90px;
+    margin-bottom: 1rem;
 }
 
-h1 {
-  font-family: 'Bruno Ace SC', cursive;
-  text-align: center;
-  line-height: 0.95;
+.main-title {
+    font-family: 'Bruno Ace SC', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    line-height: 1;
 }
 
-h2 {
-  text-align: center;
-  font-size: 1.5rem;
-  margin: 2rem 0 1rem;
+.tagline {
+    color: #3C1B8C;
+    font-weight: 600;
 }
 
 .cta-button {
-  display: block;
-  margin: 1rem auto;
-  padding: 1rem 2rem;
-  background-color: #3C1B8C;
-  color: #FFF;
-  font-weight: 700;
-  text-align: center;
-  border-radius: 0.5rem;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  transition: opacity 1s ease;
-  opacity: 0;
+    display: inline-block;
+    background-color: #007BFF;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 12px;
+    text-decoration: none;
+    margin-top: 1rem;
+    font-weight: bold;
+    line-height: 1;
 }
 
-.price-copy {
-  text-align: center;
-  font-weight: 700;
-  line-height: 1.0;
-  margin-bottom: 1rem;
+.offer-box {
+    background-color: #3C1B8C;
+    color: white;
+    padding: 2rem;
+    margin: 2rem auto;
+    text-align: center;
+    border-radius: 12px;
+    max-width: 600px;
 }
 
-.features ul, .process ul {
-  padding-left: 2rem;
+.process-list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    max-width: 600px;
+    margin: 2rem auto;
 }
 
-.bullet-steps {
-  list-style: none;
-  padding-left: 0;
+.process-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
 }
 
-.bullet-steps li {
-  display: flex;
-  align-items: center;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.6s ease-out;
-  margin-bottom: 0.75rem;
+.emoji {
+    font-size: 1.5rem;
+    margin-right: 1rem;
 }
 
-.bullet-steps .icon {
-  margin-right: 0.75rem;
-  font-size: 1.5rem;
-}
-
-.bullet-steps li.visible {
-  opacity: 1;
-  transform: translateY(0);
+.testimonials {
+    padding: 2rem 1rem;
+    background-color: #F5F5F5;
 }
 
 .testimonial {
-  background: #f9f9f9;
-  margin: 1rem;
-  padding: 1rem 1.5rem;
-  border-radius: 1rem;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  line-height: 1.3;
+    max-width: 600px;
+    margin: 2rem auto;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.testimonial-text {
+    font-size: 1rem;
+    line-height: 1.3;
 }
 
 .quote-mark {
-  font-size: 2.5rem;
-  color: #3C1B8C;
-  line-height: 1;
-  margin-bottom: 0.5rem;
-  animation: scaleIn 1s ease-out forwards;
+    font-size: 3rem;
+    color: #3C1B8C;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.6s ease;
 }
 
 .author {
-  font-family: 'Bruno Ace SC', cursive;
-  margin-top: 1rem;
-}
-
-.brand {
-  font-weight: 700;
-  font-family: 'Outfit', sans-serif;
-}
-
-@keyframes scaleIn {
-  from { transform: scale(0.5); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
+    font-weight: bold;
+    margin-top: 1rem;
 }
