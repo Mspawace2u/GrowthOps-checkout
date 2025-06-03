@@ -1,28 +1,46 @@
 /* ---------------------------------------------------------------
-   HERO CTA – simple fade-in on page load
+   HERO CTA – simple fade-in on load
    --------------------------------------------------------------- */
 window.addEventListener('load', () => {
   const heroCTA = document.querySelector('.cta-button');
-  heroCTA.style.opacity = 0;
-  heroCTA.style.transition = 'opacity 0.8s ease-out 0.3s';
-  requestAnimationFrame(() => heroCTA.style.opacity = 1);
+  if (heroCTA) {
+    heroCTA.style.opacity = 0;
+    heroCTA.style.transition = 'opacity 0.8s ease-out 0.3s';
+    requestAnimationFrame(() => (heroCTA.style.opacity = 1));
+  }
 });
 
 /* ---------------------------------------------------------------
-   INTERSECTION OBSERVER – bullets + quote marks
+   BULLET & QUOTE-MARK OBSERVERS
    --------------------------------------------------------------- */
-const observer = new IntersectionObserver(
+const liObserver = new IntersectionObserver(
   (entries) => {
-    entries.forEach(entry => {
+    entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
       entry.target.classList.add('visible');
-      observer.unobserve(entry.target);        // fire once
+      liObserver.unobserve(entry.target);
     });
   },
-  { threshold: 0.2 }
+  { threshold: 0, rootMargin: '0px 0px -15% 0px' }
 );
 
-/* Observe each bullet list item and each quote mark */
 document
-  .querySelectorAll('.bullet-steps li, .quote-mark')
-  .forEach(el => observer.observe(el));
+  .querySelectorAll('.bullet-steps li')
+  .forEach((el) => liObserver.observe(el));
+
+/* testimonials: add .visible to internal quote-mark */
+const quoteObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      const quote = entry.target.querySelector('.quote-mark');
+      if (quote) quote.classList.add('visible');
+      quoteObserver.unobserve(entry.target);
+    });
+  },
+  { threshold: 0.15 }
+);
+
+document
+  .querySelectorAll('.testimonial')
+  .forEach((box) => quoteObserver.observe(box));
