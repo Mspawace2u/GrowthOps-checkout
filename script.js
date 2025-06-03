@@ -1,25 +1,17 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const observerOptions = {
-    threshold: 0.1
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("fade-in");
-      }
-    });
-  }, observerOptions);
-
-  document.querySelectorAll(".scroll-fade-in").forEach(el => {
-    observer.observe(el);
+window.addEventListener("scroll", function () {
+  const steps = document.querySelectorAll(".bullet-steps li");
+  steps.forEach((step, i) => {
+    const rect = step.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 100) {
+      setTimeout(() => step.classList.add("visible"), i * 150);
+    }
   });
+});
 
-  document.querySelectorAll(".bullet-container").forEach(container => {
-    observer.observe(container);
-  });
-
-  document.querySelectorAll(".quote-mark").forEach(quote => {
-    observer.observe(quote);
-  });
+window.addEventListener("load", () => {
+  const cta = document.querySelector(".cta-button");
+  cta.style.opacity = 0;
+  setTimeout(() => {
+    cta.style.opacity = 1;
+  }, 500);
 });
