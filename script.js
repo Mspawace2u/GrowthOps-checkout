@@ -1,24 +1,17 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const bullets = document.querySelectorAll(".bullet-item");
-  const emojis = document.querySelectorAll(".emoji");
-  const texts = document.querySelectorAll(".bullet-text");
-  const quotes = document.querySelectorAll(".quote");
-  const observerOptions = {
-    threshold: 0.1
-  };
+window.addEventListener("scroll", function () {
+  const steps = document.querySelectorAll(".bullet-steps li");
+  steps.forEach((step, i) => {
+    const rect = step.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 100) {
+      setTimeout(() => step.classList.add("visible"), i * 150);
+    }
+  });
+});
 
-  const animateOnScroll = (entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        observer.unobserve(entry.target);
-      }
-    });
-  };
-
-  const observer = new IntersectionObserver(animateOnScroll, observerOptions);
-  bullets.forEach((bullet) => observer.observe(bullet));
-  emojis.forEach((emoji) => observer.observe(emoji));
-  texts.forEach((text) => observer.observe(text));
-  quotes.forEach((quote) => observer.observe(quote));
+window.addEventListener("load", () => {
+  const cta = document.querySelector(".cta-button");
+  cta.style.opacity = 0;
+  setTimeout(() => {
+    cta.style.opacity = 1;
+  }, 500);
 });
