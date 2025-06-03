@@ -1,0 +1,111 @@
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+.logo {
+  width: 90%;
+  max-width: 250px;
+  display: block;
+  margin: 0 auto;
+}
+
+.headline {
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 0.95;
+}
+
+.tagline {
+  text-align: center;
+  color: #3C1B8C;
+}
+
+.cta {
+  background-color: #007BFF;
+  color: white;
+  border-radius: 12px;
+  padding: 12px 24px;
+  text-align: center;
+  display: block;
+  width: fit-content;
+  margin: 1rem auto;
+  text-decoration: none;
+}
+
+.cta-section {
+  background-color: #3C1B8C;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+}
+
+.bullet-item {
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+.bullet-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.emoji {
+  font-size: 1.8rem;
+  margin-right: 12px;
+  transform: translateX(-30px);
+  opacity: 0;
+  transition: all 0.6s ease-out;
+}
+
+.emoji.visible {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.bullet-text {
+  transform: translateX(30px);
+  opacity: 0;
+  transition: all 0.6s ease-out;
+}
+
+.bullet-text.visible {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.testimonials {
+  padding: 2rem;
+}
+
+.testimonial {
+  margin: 1rem auto;
+  padding: 1rem;
+  max-width: 600px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.testimonial .quote {
+  font-size: 3rem;
+  color: #3C1B8C;
+  transform: scale(0.8);
+  opacity: 0;
+  transition: all 0.6s ease-out;
+}
+
+.testimonial.visible .quote {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.testimonial p {
+  line-height: 1.3;
+}
