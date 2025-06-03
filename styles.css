@@ -1,6 +1,6 @@
-/* ------------------------------------------------------------------
+/* ---------------------------------------------------------------
    COLOR SYSTEM
-   ------------------------------------------------------------------ */
+   --------------------------------------------------------------- */
 :root {
   --indigo:   #3C1B8C;
   --blue:     #007BFF;
@@ -9,9 +9,9 @@
   --white:    #FFFFFF;
 }
 
-/* ------------------------------------------------------------------
+/* ---------------------------------------------------------------
    RESET / BODY
-   ------------------------------------------------------------------ */
+   --------------------------------------------------------------- */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
   font-family: 'Outfit', sans-serif;
@@ -20,9 +20,9 @@ body {
   background: var(--white);
 }
 
-/* ------------------------------------------------------------------
+/* ---------------------------------------------------------------
    PROGRESS BAR
-   ------------------------------------------------------------------ */
+   --------------------------------------------------------------- */
 .progress-bar{
   background: var(--indigo);
   color: var(--white);
@@ -30,37 +30,37 @@ body {
   font-weight: 700;
   padding: .75rem 1rem;
   position: fixed;
-  inset: 0 0 auto 0;       /* top:0; left:0; right:0 */
+  inset: 0 0 auto 0;
   z-index: 9999;
 }
 
-/* ------------------------------------------------------------------
-   HERO
-   ------------------------------------------------------------------ */
+/* ---------------------------------------------------------------
+   HERO  (logo gap reduced)
+   --------------------------------------------------------------- */
 .hero{
-  padding: 5.5rem 1.5rem 3rem;   /* accounts for fixed bar */
+  padding: 4.25rem 1.5rem 2rem;      /* 50 % tighter bottom space */
   text-align: center;
 }
 .logo{
   width: 45%;
   max-width: 160px;
-  margin: 0 auto 1.25rem;
+  margin: 0 auto 1rem;               /* 50 % tighter below logo */
 }
 h1{
   font-family: 'Bruno Ace SC', sans-serif;
   font-size: clamp(1.9rem, 5vw, 2.6rem);
-  line-height: .95;                /* tightened */
-  margin-bottom: .5rem;
+  line-height: .95;
+  margin-bottom: .4rem;
 }
 .subtitle{
   font-weight: 500;
   color: var(--indigo);
-  margin-bottom: 1.75rem;
+  margin-bottom: 1.25rem;            /* tighter */
 }
 
-/* ------------------------------------------------------------------
-   CTA BUTTONS  (hero + price section)
-   ------------------------------------------------------------------ */
+/* ---------------------------------------------------------------
+   CTA BUTTONS
+   --------------------------------------------------------------- */
 .cta-button,
 .book-button{
   display: inline-block;
@@ -81,41 +81,40 @@ h1{
   box-shadow: 0 6px 16px rgba(0,0,0,.18);
 }
 
-/* ------------------------------------------------------------------
-   FEATURES
-   ------------------------------------------------------------------ */
+/* ---------------------------------------------------------------
+   FEATURES  (padding halved)
+   --------------------------------------------------------------- */
 .features{
-  padding: 3rem 1.5rem;
+  padding: 1.5rem 1.5rem 1rem;
 }
 .features h2{
   font-size: 1.6rem;
   text-align: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 .features li{
-  margin-bottom: 1rem;
+  margin-bottom: .75rem;
   list-style: none;
 }
 .features strong{ color: var(--indigo); }
 
-/* ------------------------------------------------------------------
-   PROCESS  (bullet cascade)
-   ------------------------------------------------------------------ */
-.process{ padding: 3rem 1.5rem 1rem; }
+/* ---------------------------------------------------------------
+   PROCESS  (padding halved)
+   --------------------------------------------------------------- */
+.process{ padding: 1.5rem 1.5rem .5rem; }
 .process h2{
   font-size: 1.6rem;
   text-align: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
 }
 
 /* bullet container */
 .bullet-steps li{
   display: flex;
   align-items: flex-start;
-  gap: .75rem;
-  margin-bottom: 1rem;
+  gap: .65rem;
+  margin-bottom: .75rem;
 
-  /* start hidden */
   opacity: 0;
   transition: opacity .6s ease-out;
 }
@@ -127,19 +126,22 @@ h1{
 
 .bullet-steps li.visible{ opacity: 1; }
 
-/* icon slides in from left, fades */
-.icon{
-  font-size: 1.7rem;
+/* fingerprint icon */
+.icon.fingerprint{
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  fill: var(--blue);
   transform: translateX(-20px);
   opacity: 0;
   transition: transform .6s ease-out, opacity .6s ease-out;
 }
-.bullet-steps li.visible .icon{
+.bullet-steps li.visible .icon.fingerprint{
   transform: none;
   opacity: 1;
 }
 
-/* text slides in from right, fades */
+/* text slide-in */
 .step-text{
   flex: 1;
   transform: translateX(20px);
@@ -151,43 +153,47 @@ h1{
   opacity: 1;
 }
 
-/* ------------------------------------------------------------------
-   PRICE SECTION  (indigo call-out)
-   ------------------------------------------------------------------ */
+/* ---------------------------------------------------------------
+   PRICE SECTION  (now a rounded “card”)
+   --------------------------------------------------------------- */
 .price-section{
   background: var(--indigo);
   color: var(--white);
   text-align: center;
-  padding: 2rem 5vw;
-  box-shadow: 0 4px 12px rgba(0,0,0,.15);
+  padding: 1.5rem 5vw 2rem;
+  margin: 2.5rem auto;                   /* separates from sections */
+  width: 90%;
+  max-width: 700px;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,.12);
 }
 .price-copy{
   max-width: 80%;
-  margin: 0 auto 1.5rem;
-  line-height: 1.0;          /* as requested */
+  margin: 0 auto 1.25rem;
+  line-height: 1.0;
   font-weight: 700;
 }
 .book-button{
-  width: 50%;
+  width: 55%;
   max-width: 240px;
 }
 
-/* ------------------------------------------------------------------
-   TESTIMONIALS
-   ------------------------------------------------------------------ */
-.testimonials{ padding: 3rem 1.5rem 4rem; }
+/* ---------------------------------------------------------------
+   TESTIMONIALS  (padding halved)
+   --------------------------------------------------------------- */
+.testimonials{ padding: 2rem 1.5rem 3rem; }
 .testimonials h2{
   font-size: 1.6rem;
   text-align: center;
-  margin-bottom: 1.75rem;
+  margin-bottom: 1.5rem;
 }
 
 .testimonial{
   background: var(--white);
   border-radius: 1.5rem;
   box-shadow: 0 4px 12px rgba(0,0,0,.10);
-  padding: 1.75rem 1.5rem 1.5rem;
-  margin-bottom: 2rem;
+  padding: 1.5rem 1.4rem 1.25rem;
+  margin-bottom: 1.5rem;
   position: relative;
 }
 
@@ -196,7 +202,8 @@ h1{
   font-size: 2.5rem;
   color: var(--indigo);
   position: absolute;
-  top: 1rem; left: 1.25rem;
+  top: .75rem;
+  left: 1.25rem;
   transform: scale(.8);
   opacity: 0;
   transition: transform .5s ease-in-out, opacity .5s ease-in-out;
@@ -208,15 +215,15 @@ h1{
 
 .author{
   font-family: 'Bruno Ace SC', sans-serif;
-  margin-top: 1.25rem;
+  margin-top: 1rem;
   text-transform: capitalize;
 }
 .brand{ font-weight: 700; }
 
-/* ------------------------------------------------------------------
+/* ---------------------------------------------------------------
    MEDIA QUERIES
-   ------------------------------------------------------------------ */
+   --------------------------------------------------------------- */
 @media(min-width:600px){
   .logo{ max-width: 180px; }
-  .price-section{ padding: 2.5rem 6vw; }
+  .price-section{ padding: 2rem 6vw 2.25rem; }
 }
