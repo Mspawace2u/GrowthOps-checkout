@@ -121,7 +121,7 @@ h1{
 .bullet-steps li:nth-child(4){ transition-delay: 450ms; }
 .bullet-steps li.visible{ opacity: 1; }
 .icon.fingerprint{
-  height: 32px;          /* keeps original aspect ratio */
+  height: 32px;
   width:  auto;
   flex-shrink: 0;
   transform: translateX(-20px);
@@ -186,32 +186,36 @@ h1{
   position: relative;
 }
 
-/* quote mark – snug to corner, fade in */
+/* quote mark – slight inset, fade in */
 .quote-mark{
   font-size: 2.5rem;
   color: var(--indigo);
   position: absolute;
-  top: 0;                 /* flush with top edge */
-  left: 0;                /* flush with left edge */
+  top: 0;
+  left: 0.25rem;        /* 0.25 rem inset from left edge */
   opacity: 0;
   transition: opacity .6s ease-out;
   pointer-events: none;
 }
 .quote-mark.visible{ opacity: 1; }
 
-/* push text right so it clears the icon */
+/* push testimonial text right so it clears the icon */
 .testimonial p,
 .author,
 .brand{
-  padding-left: 3.4rem;   /* final gap */
+  padding-left: 2.2rem;   /* was 3.4rem */
 }
 
+/* author & brand styling */
 .author{
   font-family: 'Bruno Ace SC', sans-serif;
   margin-top: 1rem;
   text-transform: capitalize;
 }
-.brand{ font-weight: 700; }
+.brand{
+  font-weight: 700;
+  color: var(--indigo);
+}
 
 /* ---------------------------------------------------------------
    MEDIA QUERIES
