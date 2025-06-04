@@ -35,16 +35,16 @@ body {
 }
 
 /* ---------------------------------------------------------------
-   HERO  (logo gap reduced)
+   HERO
    --------------------------------------------------------------- */
 .hero{
-  padding: 4.25rem 1.5rem 2rem;      /* 50 % tighter bottom space */
+  padding: 4.25rem 1.5rem 2rem;
   text-align: center;
 }
 .logo{
   width: 45%;
   max-width: 160px;
-  margin: 0 auto 1rem;               /* 50 % tighter below logo */
+  margin: 0 auto 1rem;
 }
 h1{
   font-family: 'Bruno Ace SC', sans-serif;
@@ -55,7 +55,7 @@ h1{
 .subtitle{
   font-weight: 500;
   color: var(--indigo);
-  margin-bottom: 1.25rem;            /* tighter */
+  margin-bottom: 1.25rem;
 }
 
 /* ---------------------------------------------------------------
@@ -82,7 +82,7 @@ h1{
 }
 
 /* ---------------------------------------------------------------
-   FEATURES  (padding halved)
+   FEATURES
    --------------------------------------------------------------- */
 .features{
   padding: 1.5rem 1.5rem 1rem;
@@ -99,7 +99,7 @@ h1{
 .features strong{ color: var(--indigo); }
 
 /* ---------------------------------------------------------------
-   PROCESS  (padding halved)
+   PROCESS
    --------------------------------------------------------------- */
 .process{ padding: 1.5rem 1.5rem .5rem; }
 .process h2{
@@ -126,12 +126,11 @@ h1{
 
 .bullet-steps li.visible{ opacity: 1; }
 
-/* fingerprint icon */
+/* fingerprint PNG  */
 .icon.fingerprint{
   width: 24px;
   height: 24px;
   flex-shrink: 0;
-  fill: var(--blue);
   transform: translateX(-20px);
   opacity: 0;
   transition: transform .6s ease-out, opacity .6s ease-out;
@@ -154,14 +153,14 @@ h1{
 }
 
 /* ---------------------------------------------------------------
-   PRICE SECTION  (now a rounded “card”)
+   PRICE SECTION
    --------------------------------------------------------------- */
 .price-section{
   background: var(--indigo);
   color: var(--white);
   text-align: center;
   padding: 1.5rem 5vw 2rem;
-  margin: 2.5rem auto;                   /* separates from sections */
+  margin: 2.5rem auto;
   width: 90%;
   max-width: 700px;
   border-radius: 1.5rem;
@@ -179,7 +178,7 @@ h1{
 }
 
 /* ---------------------------------------------------------------
-   TESTIMONIALS  (padding halved)
+   TESTIMONIALS
    --------------------------------------------------------------- */
 .testimonials{ padding: 2rem 1.5rem 3rem; }
 .testimonials h2{
@@ -197,19 +196,19 @@ h1{
   position: relative;
 }
 
-/* quote mark animation */
+/* quote mark animation + new placement */
 .quote-mark{
   font-size: 2.5rem;
   color: var(--indigo);
   position: absolute;
-  top: .75rem;
+  top: 1.1rem;                 /* sits ~halfway after animation */
   left: 1.25rem;
-  transform: scale(.8);
+  transform: translateY(-6px) scale(.8);
   opacity: 0;
   transition: transform .5s ease-in-out, opacity .5s ease-in-out;
 }
 .quote-mark.visible{
-  transform: scale(1);
+  transform: translateY(0) scale(1);
   opacity: 1;
 }
 
