@@ -126,10 +126,10 @@ h1{
 
 .bullet-steps li.visible{ opacity: 1; }
 
-/* fingerprint PNG  */
+/* fingerprint PNG  (keep aspect ratio) */
 .icon.fingerprint{
-  width: 24px;
-  height: 24px;
+  height: 32px;        /* lock the tall side */
+  width:  auto;        /* let width scale naturally */
   flex-shrink: 0;
   transform: translateX(-20px);
   opacity: 0;
@@ -196,12 +196,12 @@ h1{
   position: relative;
 }
 
-/* quote mark animation + new placement */
+/* quote mark animation + placement */
 .quote-mark{
   font-size: 2.5rem;
   color: var(--indigo);
   position: absolute;
-  top: 1.1rem;                 /* sits ~halfway after animation */
+  top: 1.1rem;
   left: 1.25rem;
   transform: translateY(-6px) scale(.8);
   opacity: 0;
