@@ -126,10 +126,10 @@ h1{
 
 .bullet-steps li.visible{ opacity: 1; }
 
-/* fingerprint PNG  (keep aspect ratio) */
+/* fingerprint PNG  */
 .icon.fingerprint{
-  height: 32px;        /* lock the tall side */
-  width:  auto;        /* let width scale naturally */
+  height: 32px;        /* keep original aspect ratio */
+  width:  auto;
   flex-shrink: 0;
   transform: translateX(-20px);
   opacity: 0;
@@ -196,21 +196,18 @@ h1{
   position: relative;
 }
 
-/* quote mark animation + placement */
+/* quote mark – fade in, fixed position */
 .quote-mark{
   font-size: 2.5rem;
   color: var(--indigo);
   position: absolute;
-  top: 1.1rem;
+  top: 0.6rem;          /* upper-left corner */
   left: 1.25rem;
-  transform: translateY(-6px) scale(.8);
   opacity: 0;
-  transition: transform .5s ease-in-out, opacity .5s ease-in-out;
+  transition: opacity .6s ease-out;
+  pointer-events: none;
 }
-.quote-mark.visible{
-  transform: translateY(0) scale(1);
-  opacity: 1;
-}
+.quote-mark.visible{ opacity: 1; }
 
 .author{
   font-family: 'Bruno Ace SC', sans-serif;
