@@ -192,9 +192,9 @@ h1{
   color: var(--indigo);
   position: absolute;
   top: 0;
-  left: 0.25rem;        /* 0.25 rem inset from left edge */
+  left: 0.5rem;        /* 0.25 rem inset from left edge */
   opacity: 0;
-  transition: opacity .6s ease-out;
+  transition: opacity .8s ease-out;
   pointer-events: none;
 }
 .quote-mark.visible{ opacity: 1; }
@@ -203,7 +203,7 @@ h1{
 .testimonial p,
 .author,
 .brand{
-  padding-left: 2.2rem;   /* was 3.4rem */
+  padding-left: 1.8rem;   /* was 3.4rem */
 }
 
 /* author & brand styling */
