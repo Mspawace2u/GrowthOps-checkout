@@ -226,7 +226,7 @@ h1{
 .author,
 .brand{
   padding-left: 1.8rem;   /* leave this for the quote-mark clearance */
-  padding-right: 1.5rem;  /* ← add or tweak this value to taste */
+  padding-right: 1.2rem;  /* ← add or tweak this value to taste */
 }
 
 /* author & brand styling */
