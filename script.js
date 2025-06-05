@@ -44,3 +44,7 @@ const quoteObserver = new IntersectionObserver(
 document
   .querySelectorAll('.testimonial')
   .forEach((box) => quoteObserver.observe(box));
+  /* feature-list bullets: fade + pan-up */
+document
+  .querySelectorAll('.features li')
+  .forEach(li => liObserver.observe(li));
